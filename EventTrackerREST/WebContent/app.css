@@ -1,0 +1,36 @@
+h1 {
+	color: red;
+}
+
+h3 {
+	color: white;
+}
+body {
+background: url("https://cdn.vox-cdn.com/uploads/chorus_asset/file/8826545/20170707_GH_CHIPOTLE_1010.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+
+}
+
+form {
+	color: white;
+	font-size: 16px;
+}
+
+table {
+  border-color: white;
+  border-width: medium;
+  border-style: solid;
+  font-color: white;
+	font-size: 16px;
+
+}
+table {
+	font-color: white;
+	color: white;
+	font-size: 16px;
+}
+
