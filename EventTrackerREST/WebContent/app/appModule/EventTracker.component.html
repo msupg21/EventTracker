@@ -1,0 +1,55 @@
+<div class="orderInt">
+	<h1>Chipotle Order Tracker</h1>
+	<button ng-hide="vm.showCreateForm || vm.didShitPants" type="btn" class="btn btn-success" ng-click="vm.showCreateForm = true;">Create a New Order</button>
+	<button ng-hide="vm.didShitPants" type="btn" class="btn btn-info" ng-click="vm.didShitPants = true">Happen to shit pants?</button>
+	<div ng-show="vm.didShitPants">
+  		<h2>Wondering if you shit your pants?: {{vm.didShitPants()}}</h2>
+  		<button type="btn" class="btn btn-info" ng-click="vm.didShitPants = false;">Return</button>
+  	</div>
+  	<div ng-show="vm.showCreateForm">
+  	  <form>
+  	  	<input placeholder="Name:" ng-model="chipotleOrder.name"> <br>
+  	  	<input placeholder="Number of Bowls:" ng-model="chipotleOrder.numberOfBowls"><br> 
+  	  	<input placeholder="Times Ordered Double Meat:" ng-model="chipotleOrder.numberOfTimesDM"> <br>
+  	  	<input placeholder="Amount Spent:" ng-model="chipotleOrder.amountSpent"> <br>
+  	  	<br>
+  	  	<button type="btn" class="btn btn-success" ng-click="vm.create(chipotleOrder)">Add Another Order</button>
+  	  	<button type="btn" class="btn btn-warning" ng-click="vm.showCreateForm = false;">Cancel</button>
+  	  </form>
+  	</div>
+  	
+  	  <div class="OrderInt" ng-hide="vm.selected || vm.edit || vm.didShitPants" ng-repeat="order in vm.chipOrder"  ng-click="vm.show(order.id)">
+	<h2>{{order.name}}'s Order</h2>
+	  <ul>
+		<li>Number of bowls: {{order.numberOfBowls}}</li>
+		<li>Number of times ordered double meat : {{order.numberOfTimesDM}}</li>
+		<li>Amount of money spent: {{order.amountSpent}}</li>
+		<li>Did shit pants? {{order.didShitPants}}</li>
+	  </ul>
+
+  </div>
+  
+    <div class="OrderInt" ng-show="vm.selected">
+  	<h3>{{vm.selected.name}}'s Order</h3>
+		  <ul>
+		<li>Number of bowls: {{order.numberOfBowls}}</li>
+		<li>Number of times ordered double meat: {{order.numberOfTimesDM}}</li>
+		<li>Amount of money spent: {{order.amountSpent}}</li>
+		<li>Did shit pants? {{order.didShitPants}}</li>
+	  </ul>
+	  <button type="btn" class="btn btn-info" ng-click="vm.selected = null">Go Back</button>
+	  <button type="btn" class="btn btn-warning" ng-click="vm.edit = vm.selected; vm.selected = null;">Edit</button>
+	  <button type="btn" class="btn btn-danger" ng-click="vm.delete(vm.selected.id)">Delete</button>
+  </div>
+  
+    <div class="OrderInt" ng-show="vm.edit">
+  	<h3>{{vm.edit.name}}'s Ordert</h3>
+	  <form>
+	  	<input type="hidden" ng-model="vm.edit.name">
+	  	Number of bowls: <input ng-model="vm.edit.numberOfBowls"><br>
+	  	Number of times ordered double meat: <input ng-model="vm.edit.numberOfTimesDM"><br>
+	  	Amount of money spent: <input ng-model="vm.edit.amountSpent"><br>
+		<button type="btn" class="btn btn-success" ng-click="vm.update(vm.edit.id, vm.edit)">Submit</button> 
+  	    <button type="btn" class="btn btn-info" ng-click="vm.edit = null">Cancel</button>
+	  </form>
+  </div>

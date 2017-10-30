@@ -1,35 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="appModule">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/master.css">
-<title>Chipotle</title>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="app.css">
-<title>Chiptole Order Tracker</title>
+<title>Chipotle Orderst</title>
+<!-- Boostrap -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- ANGULAR -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+<!-- Module -->
+<script src="app/appModule/EventTracker.module.js"></script>
+<!-- Service -->
+<script src="app/appModule/EventTracker.service.js"></script>
+<!-- Component -->
+<script src="app/appModule/EventTracker.component.js"></script>
 </head>
 <body>
-	<h1>Welcome to Chipotle Tracker</h1>
-	
-	<div id="stuff">
-	</div>
-	<h1>Create a new order instance</h1>
-		<div id="Form">
-	  <form name="createForm">
-	  	Name: <input type="text" id="orderName" name="name" placeholder="Name" > <br><br>
-	  	Number of Bowls: <input id="numOfBowls" type="text" name="numBowls" placeholder="Number of Bowls"> <br><br>
-	  	Double Meat: <input type="text" id="doubleMeat" name="dm" placeholder="Double Meat"> <br><br>
-	  	Amount Spent: <input type="text" id="amountSpent" name="amountSpent" placeholder="Amount Spent"> <br><br>
-	  	<h3>Wonder if you might shit your pants after all that yummy Chipotle?</h3>
-	  <input type="button" id="create" name="button" Value="Submit" />
-	  </form>
-	</div>
-	
-	
-	<script src="app.js">
-	</script>
-	
+	<chipotle-order></chipotle-order>
 </body>
 </html>

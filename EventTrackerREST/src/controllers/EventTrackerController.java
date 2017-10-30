@@ -23,7 +23,7 @@ public class EventTrackerController {
 //	 }
 	
 	@Autowired
-	EventTrackerDAO etd;
+	private EventTrackerDAO etd;
 	
 	@RequestMapping(path = "order", method = RequestMethod.GET)
 	public List<ChipotleOrder> index() {
