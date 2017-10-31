@@ -1,5 +1,5 @@
 angular.module("appModule")
-	.factory("ChipotleOrder", function($http) {
+	.factory("chipotleOrder", function($http) {
 		var service = {};
 		
 		var BASE_URL = "api/orders"
